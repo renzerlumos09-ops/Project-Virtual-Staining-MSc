@@ -65,14 +65,14 @@ Trained on a single NVIDIA RTX 4090 (24 GB), PyTorch 2.8.0 + CUDA 12.8.
 
 **Data & checkpoints** are not included in this repository due to size and clinical data
 policy. Full experiment outputs (all baselines, both directions) are available at:
-<云盘链接放这里>.
+<link>.
 
 ## Limitations & Future Work
 
 - Forward AF→IHC mapping exhibits local mode collapse under extreme density asymmetry;
   the next iteration replaces cycle-consistency with a one-sided contrastive framework
   (CUT/Patch-NCE-based) with a two-stage pretrained encoder — see
-  [docs/新模型.pdf](docs/新模型.pdf) for the proposed architecture.
+  [docs/Reference_Patch-NCE.pdf](docs/Reference_Patch-NCE.pdf) for the proposed architecture.
 - Evaluation is single-marker and single-center; multi-marker, multi-center validation is planned.
 
 ## Acknowledgements
@@ -84,4 +84,4 @@ Advanced Bioimaging Laboratory, HKUST.
 
 ## Contact
 
-Zerui Kang — <邮箱> · Issue reports welcome.
+Zerui Kang — renzerlumos09@gmail.com · Issue reports welcome.
