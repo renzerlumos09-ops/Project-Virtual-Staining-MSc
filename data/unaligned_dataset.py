@@ -27,9 +27,15 @@ class UnalignedDataset(BaseDataset):
         self.dir_B = os.path.join(opt.dataroot, opt.phase + "B")  # create a path '/path/to/data/trainB'
         self.dir_paired = os.path.join(opt.dataroot, 'train') #成对数据的路径 
 
+        self.paired_ratio = getattr(opt, 'paired_ratio', 0.0)  # 成对数据占总数据的比例，可以根据需要调整
+        self.total_samples = getattr(opt, 'total_samples', 150000)  # 总的训练样本数量，可以根据需要调整
+        
         self.A_paths = sorted(make_dataset(self.dir_A, opt.max_dataset_size))  # load images from '/path/to/data/trainA'
         self.B_paths = sorted(make_dataset(self.dir_B, opt.max_dataset_size))  # load images from '/path/to/data/trainB'
-        self.paired_paths = sorted(make_dataset(self.dir_paired, opt.max_dataset_size))  # 加载成对数据的路径列表
+        if self.paired_ratio > 0:
+            self.paired_paths = sorted(make_dataset(self.dir_paired, opt.max_dataset_size)) # load paired images from '/path/to/data/train'
+        else:
+            self.paired_paths = []
         self.paired_size = len(self.paired_paths)  # 成对数据的数量
         
         self.paired_indices = list(range(self.paired_size))  # 成对数据的索引列表
@@ -44,10 +50,6 @@ class UnalignedDataset(BaseDataset):
         output_nc = self.opt.input_nc if btoA else self.opt.output_nc  # get the number of channels of output image
         self.transform_A = get_transform(self.opt, grayscale=(input_nc == 1))
         self.transform_B = get_transform(self.opt, grayscale=(output_nc == 1))
-
-        self.paired_ratio = getattr(self.opt, 'paired_ratio', 0.0)  # 成对数据占总数据的比例，可以根据需要调整
-
-        self.total_samples = getattr(self.opt, 'total_samples', 150000)  # 总的训练样本数量，可以根据需要调整
 
         self.data_modes =[] # 数据模式列表，包含'paired'和'unpaired'两种模式
         # 根据成对数据的比例计算成对数据和非成对数据的数量
