@@ -34,7 +34,15 @@ class BaseModel(ABC):
         self.opt = opt
         self.isTrain = opt.isTrain
         self.save_dir = Path(opt.checkpoints_dir) / opt.name  # save all the checkpoints to save_dir
-        self.device = opt.device
+        
+        if hasattr(opt, "device"):
+            self.device = opt.device
+        elif hasattr(opt, "gpu_ids") and len(opt.gpu_ids) > 0:
+            self.device = torch.device(f'cuda:{opt.gpu_ids[0]}')
+            torch.cuda.set_device(self.device)
+        else:
+            self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+
         # with [scale_width], input images might have different sizes, which hurts the performance of cudnn.benchmark.
         if opt.preprocess != "scale_width":
             torch.backends.cudnn.benchmark = True
@@ -105,8 +113,8 @@ class BaseModel(ABC):
                         del state_dict._metadata
 
                     # patch InstanceNorm checkpoints
-                    for key in list(state_dict.keys()):
-                        self.__patch_instance_norm_state_dict(state_dict, net, key.split("."))
+                    #for key in list(state_dict.keys()):
+                    #    self.__patch_instance_norm_state_dict(state_dict, net, key.split("."))
                     net.load_state_dict(state_dict)
 
                 # Move network to device

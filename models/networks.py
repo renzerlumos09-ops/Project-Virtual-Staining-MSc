@@ -3,7 +3,8 @@ import torch.nn as nn
 from torch.nn import init
 import functools
 from torch.optim import lr_scheduler
-
+import torch.nn.functional as F
+from torchvision import models
 
 ###############################################################################
 # Helper Functions
@@ -213,7 +214,7 @@ class GANLoss(nn.Module):
     that has the same size as the input.
     """
 
-    def __init__(self, gan_mode, target_real_label=1.0, target_fake_label=0.0):
+    def __init__(self, gan_mode, target_real_label=0.7, target_fake_label=0.2):
         """Initialize the GANLoss class.
 
         Parameters:
@@ -340,7 +341,14 @@ class ResnetGenerator(nn.Module):
         n_downsampling = 2
         for i in range(n_downsampling):  # add downsampling layers
             mult = 2**i
-            model += [nn.Conv2d(ngf * mult, ngf * mult * 2, kernel_size=3, stride=2, padding=1, bias=use_bias), norm_layer(ngf * mult * 2), nn.ReLU(True)]
+            model += [
+                # 将 padding=1 拆解为 ReflectionPad2d + padding=0 的 Conv2d；
+                # 以避免在边界处引入过多的零填充，从而减少边界效应（也就是边界一圈都是0，导致生成的图像边界质量较差）
+                #nn.ReflectionPad2d(1),  
+                #nn.Conv2d(ngf * mult, ngf * mult * 2, kernel_size=3, stride=2, padding=0, bias=use_bias), 
+                nn.Conv2d(ngf * mult, ngf * mult * 2, kernel_size=3, stride=2, padding=1, bias=use_bias),
+                norm_layer(ngf * mult * 2), 
+                nn.ReLU(True)]
 
         mult = 2**n_downsampling
         for i in range(n_blocks):  # add ResNet blocks
@@ -586,3 +594,99 @@ class PixelDiscriminator(nn.Module):
     def forward(self, input):
         """Standard forward."""
         return self.net(input)
+
+class PyramidLoss(nn.Module):
+    def __init__(self, levels=5):
+        super().__init__()
+        self.levels = levels
+    def forward(self, fake, real):
+        batch_size = fake.size(0)
+        total_loss = torch.zeros(batch_size, device=fake.device )
+        current_fake = fake
+        current_real = real
+        for i in range(self.levels):
+            loss = F.l1_loss(current_fake, current_real, reduction='none')
+            total_loss += loss.mean(dim=[1, 2, 3])  # 计算每个样本的损失，保持 batch 维度不变
+            if i < self.levels - 1: # 最后一层不再下采样
+                current_fake = F.avg_pool2d(current_fake, 2)
+                current_real = F.avg_pool2d(current_real, 2)
+        return total_loss / self.levels
+
+class VGGPerceptualLoss(nn.Module):
+    def __init__(self):
+        super().__init__()
+        # 获取 VGG19 特征层
+        vgg = models.vgg19(pretrained=True).features
+        
+        # 分段截取以实现链式调用
+        # stage1: conv1_1 -> relu1_1 -> conv1_2 -> relu1_2
+        self.stage1 = nn.Sequential(*vgg[:4])   
+        # stage2: pool1 -> conv2_1 -> relu2_1 -> conv2_2 -> relu2_2
+        self.stage2 = nn.Sequential(*vgg[4:9])  
+        # stage3: pool2 -> conv3_1 -> relu3_1 -> conv3_2 -> relu3_2
+        self.stage3 = nn.Sequential(*vgg[9:14]) 
+        
+        # 1. 冻结所有参数权重，不参与反向传播
+        for param in self.parameters():
+            param.requires_grad = False
+        
+        # VGG预训练的归一化参数
+        self.register_buffer('mean', torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1))
+        self.register_buffer('std', torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1))
+
+        # 2. 初始化时强制设为 eval 模式
+        self.eval()
+
+    def train(self, mode=True):
+        """
+        重写 train 方法。
+        无论外部调用 vgg_loss.train() 还是 vgg_loss.train(True)，
+        内部始终强制执行 super().train(False)，确保 BatchNorm 统计量永远被锁定。
+        """
+        return super().train(False)
+
+    def normalize(self, x):
+        x = (x + 1) / 2.0  # 将输入从 [-1, 1] 线性映射到 [0, 1]
+        x = (x - self.mean) / self.std  # 使用 VGG 的预训练归一化参数进行标准化
+        return x
+
+
+    def forward(self, fake, real):
+        curr_device = fake.device
+
+        self.stage1 = self.stage1.to(curr_device)
+        self.stage2 = self.stage2.to(curr_device)
+        #self.stage3 = self.stage3.to(curr_device)
+        self.mean = self.mean.to(curr_device)
+        self.std = self.std.to(curr_device)
+
+        batch_size = fake.size(0)
+        # 针对单通道（如荧光图或某些灰度 mask）的自适应补全
+        if fake.shape[1] == 1:
+            fake = fake.repeat(1, 3, 1, 1)
+            real = real.repeat(1, 3, 1, 1)
+
+        #输入归一化
+        fake_norm = self.normalize(fake)
+        real_norm = self.normalize(real)
+
+        # 链式前向传递，减少重复计算
+        # Stage 1
+        feat_f1 = self.stage1(fake_norm)  # flatten 特征图以计算 L1 损失
+        feat_r1 = self.stage1(real_norm)
+        loss = F.l1_loss(feat_f1.view(batch_size, -1), feat_r1.view(batch_size, -1), reduction='none').mean(1) 
+        # 计算每个样本的损失，保持 batch 维度不变
+        
+        # Stage 2
+        feat_f2 = self.stage2(feat_f1)
+        # 继续前向传递并 flatten
+        feat_r2 = self.stage2(feat_r1)
+        loss += F.l1_loss(feat_f2.view(batch_size, -1), feat_r2.view(batch_size, -1), reduction='none').mean(1)
+        
+        # Stage 3
+        #feat_f3 = self.stage3(feat_f2)
+        #feat_r3 = self.stage3(feat_r2)
+        #loss += F.l1_loss(feat_f3.view(batch_size, -1), feat_r3.view(batch_size, -1), reduction='none').mean(1)
+
+        # 返回总感知损失（通常直接累加，利用外部 lambda 控制总强度）
+        return loss

@@ -3,7 +3,7 @@ import itertools
 from util.image_pool import ImagePool
 from .base_model import BaseModel
 from . import networks
-
+from .networks import VGGPerceptualLoss, PyramidLoss
 
 class CycleGANModel(BaseModel):
     """
@@ -41,12 +41,10 @@ class CycleGANModel(BaseModel):
         if is_train:
             parser.add_argument("--lambda_A", type=float, default=10.0, help="weight for cycle loss (A -> B -> A)")
             parser.add_argument("--lambda_B", type=float, default=10.0, help="weight for cycle loss (B -> A -> B)")
-            parser.add_argument(
-                "--lambda_identity",
-                type=float,
-                default=0.5,
-                help="use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1",
-            )
+            parser.add_argument("--lambda_identity", type=float, default=0.5, help="use identity mapping. Setting lambda_identity other than 0 has an effect of scaling the weight of the identity mapping loss. For example, if the weight of the identity loss should be 10 times smaller than the weight of the reconstruction loss, please set lambda_identity = 0.1")
+            parser.add_argument("--lambda_L1", type=float, default=10.0, help="weight for L1 loss")
+            parser.add_argument("--lambda_vgg", type=float, default=10.0, help="weight for VGG loss")
+            parser.add_argument("--lambda_pyramid", type=float, default=20.0, help="weight for Pyramid loss")
 
         return parser
 
@@ -58,11 +56,20 @@ class CycleGANModel(BaseModel):
         """
         BaseModel.__init__(self, opt)
         # specify the training losses you want to print out. The training/test scripts will call <BaseModel.get_current_losses>
-        self.loss_names = ["D_A", "G_A", "cycle_A", "idt_A", "D_B", "G_B", "cycle_B", "idt_B"]
+        self.loss_names = ["D_A", "G_A", "cycle_A", "idt_A", "D_B", "G_B", "cycle_B", "idt_B", "G_L1", "G_VGG", "G_Pyramid"]
+        self.criterionL1= torch.nn.L1Loss(reduction='none').to(self.device)
+        self.criterionPyramid = PyramidLoss(levels=3,).to(self.device)
+        
+        if getattr(self.opt, 'lambda_vgg', 0.0) > 0:
+            self.loss_names.append("G_VGG")
+            self.criterionVGG = VGGPerceptualLoss().to(self.device)
+        else:
+            self.criterionVGG = None
+
         # specify the images you want to save/display. The training/test scripts will call <BaseModel.get_current_visuals>
         visual_names_A = ["real_A", "fake_B", "rec_A"]
         visual_names_B = ["real_B", "fake_A", "rec_B"]
-        if self.isTrain and self.opt.lambda_identity > 0.0:  # if identity loss is used, we also visualize idt_B=G_A(B) ad idt_A=G_B(A)
+        if self.isTrain and getattr(self.opt, 'lambda_identity', 0.0) > 0.0:  # if identity loss is used, we also visualize idt_B=G_A(B) ad idt_A=G_B(A)
             visual_names_A.append("idt_B")
             visual_names_B.append("idt_A")
 
@@ -90,8 +97,9 @@ class CycleGANModel(BaseModel):
             self.fake_B_pool = ImagePool(opt.pool_size)  # create image buffer to store previously generated images
             # define loss functions
             self.criterionGAN = networks.GANLoss(opt.gan_mode).to(self.device)  # define GAN loss.
-            self.criterionCycle = torch.nn.L1Loss()
-            self.criterionIdt = torch.nn.L1Loss()
+            self.criterionCycle = torch.nn.L1Loss().to(self.device)  # define cycle consistency loss
+            self.criterionIdt = torch.nn.L1Loss().to(self.device)
+
             # initialize optimizers; schedulers will be automatically created by function <BaseModel.setup>.
             self.optimizer_G = torch.optim.Adam(itertools.chain(self.netG_A.parameters(), self.netG_B.parameters()), lr=opt.lr, betas=(opt.beta1, 0.999))
             self.optimizer_D = torch.optim.Adam(itertools.chain(self.netD_A.parameters(), self.netD_B.parameters()), lr=opt.lr, betas=(opt.beta1, 0.999))
@@ -110,6 +118,7 @@ class CycleGANModel(BaseModel):
         self.real_A = input["A" if AtoB else "B"].to(self.device)
         self.real_B = input["B" if AtoB else "A"].to(self.device)
         self.image_paths = input["A_paths" if AtoB else "B_paths"]
+        self.is_paired = input["is_paired"].to(self.device)
 
     def forward(self):
         """Run forward pass; called by both functions <optimize_parameters> and <test>."""
@@ -155,6 +164,10 @@ class CycleGANModel(BaseModel):
         lambda_idt = self.opt.lambda_identity
         lambda_A = self.opt.lambda_A
         lambda_B = self.opt.lambda_B
+
+        mask = self.is_paired.view(-1).float()
+        num_paired = torch.sum(mask).item()
+
         # Identity loss
         if lambda_idt > 0:
             # G_A should be identity if real_B is fed: ||G_A(B) - B||
@@ -177,6 +190,29 @@ class CycleGANModel(BaseModel):
         self.loss_cycle_B = self.criterionCycle(self.rec_B, self.real_B) * lambda_B
         # combined loss and calculate gradients
         self.loss_G = self.loss_G_A + self.loss_G_B + self.loss_cycle_A + self.loss_cycle_B + self.loss_idt_A + self.loss_idt_B
+        
+        if num_paired > 0:
+            # 1. L1 Loss (使用 reduction='none' 确保能跟 mask 相乘)
+            # 注意：criterionL1 必须在初始化时设置为 nn.L1Loss(reduction='none')
+            L1_loss_per_sample = torch.nn.functional.l1_loss(self.fake_B, self.real_B, reduction='none').mean(dim=(1, 2, 3))
+            self.loss_G_L1 = (L1_loss_per_sample * mask).sum() / (num_paired + 1e-8) * self.opt.lambda_L1
+            
+            if self.opt.lambda_vgg > 0 and self.criterionVGG is not None:
+                # 2. VGG Loss
+                vgg_loss_per_sample = self.criterionVGG(self.fake_B, self.real_B)
+                self.loss_G_VGG = (vgg_loss_per_sample * mask).sum() / (num_paired + 1e-8) * self.opt.lambda_vgg
+            else:
+                self.loss_G_VGG = 0.0
+            
+            # 3. Pyramid Loss
+            pyramid_loss_per_sample = self.criterionPyramid(self.fake_B, self.real_B)
+            self.loss_G_Pyramid = (pyramid_loss_per_sample * mask).sum() / (num_paired + 1e-8) * self.opt.lambda_pyramid
+        
+        else:
+            self.loss_G_L1 = self.loss_G_VGG = self.loss_G_Pyramid = 0.0
+
+        # --- [第四步] 汇总并反向传播 ---
+        self.loss_G += self.loss_G_L1 + self.loss_G_VGG + self.loss_G_Pyramid
         self.loss_G.backward()
 
     def optimize_parameters(self):

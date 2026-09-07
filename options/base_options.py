@@ -41,9 +41,9 @@ class BaseOptions:
         parser.add_argument("--direction", type=str, default="AtoB", help="AtoB or BtoA")
         parser.add_argument("--serial_batches", action="store_true", help="if true, takes images in order to make batches, otherwise takes them randomly")
         parser.add_argument("--num_threads", default=4, type=int, help="# threads for loading data")
-        parser.add_argument("--batch_size", type=int, default=1, help="input batch size")
-        parser.add_argument("--load_size", type=int, default=286, help="scale images to this size")
-        parser.add_argument("--crop_size", type=int, default=256, help="then crop to this size")
+        parser.add_argument("--batch_size", type=int, default=2, help="input batch size")
+        parser.add_argument("--load_size", type=int, default=1024, help="scale images to this size")
+        parser.add_argument("--crop_size", type=int, default=512, help="then crop to this size")
         parser.add_argument("--max_dataset_size", type=int, default=float("inf"), help="Maximum number of samples allowed per dataset. If the dataset directory contains more than max_dataset_size, only a subset is loaded.")
         parser.add_argument("--preprocess", type=str, default="resize_and_crop", help="scaling and cropping of images at load time [resize_and_crop | crop | scale_width | scale_width_and_crop | none]")
         parser.add_argument("--no_flip", action="store_true", help="if specified, do not flip the images for data augmentation")
@@ -56,6 +56,7 @@ class BaseOptions:
         # wandb parameters
         parser.add_argument("--use_wandb", action="store_true", help="if specified, then init wandb logging")
         parser.add_argument("--wandb_project_name", type=str, default="CycleGAN-and-pix2pix", help="specify wandb project name")
+        parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         self.initialized = True
         return parser
 
@@ -116,11 +117,20 @@ class BaseOptions:
         """Parse our options, create checkpoints directory suffix, and set up gpu device."""
         opt = self.gather_options()
         opt.isTrain = self.isTrain  # train or test
-
-        # process opt.suffix
-        if opt.suffix:
-            suffix = ("_" + opt.suffix.format(**vars(opt))) if opt.suffix != "" else ""
-            opt.name = opt.name + suffix
+        
+        str_ids = opt.gpu_ids.split(",")
+        opt.gpu_ids = []
+        for str_id in str_ids:
+            id = int(str_id)
+            if id >= 0:
+                opt.gpu_ids.append(id)
+        
+        # set gpu ids
+        if len(opt.gpu_ids) > 0:
+            torch.cuda.set_device(opt.gpu_ids[0])
+            opt.device = torch.device(f"cuda:{opt.gpu_ids[0]}")
+        else:
+            opt.device = torch.device("cpu")
 
         self.print_options(opt)
         self.opt = opt

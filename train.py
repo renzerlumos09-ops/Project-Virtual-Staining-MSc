@@ -25,11 +25,11 @@ from data import create_dataset
 from models import create_model
 from util.visualizer import Visualizer
 from util.util import init_ddp, cleanup_ddp
-
+from torch.cuda.amp import GradScaler, autocast
+import torch
 
 if __name__ == "__main__":
     opt = TrainOptions().parse()  # get training options
-    opt.device = init_ddp()
     dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
     dataset_size = len(dataset)  # get the number of images in the dataset.
     print(f"The number of training images = {dataset_size}")
@@ -38,14 +38,19 @@ if __name__ == "__main__":
     model.setup(opt)  # regular setup: load and print networks; create schedulers
     visualizer = Visualizer(opt)  # create a visualizer that display/save images and plots
     total_iters = 0  # the total number of training iterations
+    scaler = GradScaler()  # for automatic mixed precision
     for epoch in range(opt.epoch_count, opt.n_epochs + opt.n_epochs_decay + 1):
+        if hasattr(dataset, "dataset") and hasattr(dataset.dataset, "shuffle"):
+            dataset.dataset.shuffle()  # shuffle for unaligned dataset
+        elif hasattr(dataset, "shuffle"):
+            dataset.shuffle()  # shuffle for paired dataset
         epoch_start_time = time.time()  # timer for entire epoch
         iter_data_time = time.time()  # timer for data loading per iteration
         epoch_iter = 0  # the number of training iterations in current epoch, reset to 0 every epoch
         visualizer.reset()
         # Set epoch for DistributedSampler
-        if hasattr(dataset, "set_epoch"):
-            dataset.set_epoch(epoch)
+        #if hasattr(dataset, "set_epoch"):
+        #    dataset.set_epoch(epoch)
 
         for i, data in enumerate(dataset):  # inner loop within one epoch
             iter_start_time = time.time()  # timer for computation per iteration
@@ -56,6 +61,7 @@ if __name__ == "__main__":
             epoch_iter += opt.batch_size
             model.set_input(data)  # unpack data from dataset and apply preprocessing
             model.optimize_parameters()  # calculate loss functions, get gradients, update network weights
+            torch.cuda.empty_cache()  # 清理显存缓存，防止内存泄漏
 
             if total_iters % opt.display_freq == 0:  # display images on visdom and save images to a HTML file
                 save_result = total_iters % opt.update_html_freq == 0
