@@ -45,3 +45,5 @@ test/data/legacy_serialized.pt
 #Ignore Wandb
 wandb/
 .vscode/settings.json
+!docs/experiments/**/*.png
+!docs/experiments/**/*.txt
