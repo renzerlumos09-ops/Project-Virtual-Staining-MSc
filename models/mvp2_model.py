@@ -4,12 +4,12 @@ import torch.nn.functional as F
 from util.image_pool import ImagePool
 from .base_model import BaseModel
 from . import networks
-from .mvp1_modules import FrozenVGG, ProjModule, FeatureDecoder
+from .mvp2_modules import FrozenVGG, ProjModule, FeatureDecoder
 from .patchnce import PatchNCELoss, make_mlp
 
 
-class MVP1Model(BaseModel):
-    """MVP-1: 冻结 VGG 编码器 + Proj 残差筛选 + 单向 FastCUT 生成。
+class MVP2Model(BaseModel):
+    """MVP-2: 冻结 VGG 编码器 + Proj 残差筛选 + 单向 FastCUT 生成。
 
     数据流:
         real_A (AF) --FrozenVGG--> S (relu4_3), R_sig (relu2_2)
@@ -20,7 +20,7 @@ class MVP1Model(BaseModel):
     损失分组（物理分开回传）:
         G 组:    L_GAN + lambda_nce * L_NCE          （不回传 Proj）
         Proj 组: lambda_distill*L_distill + lambda_proj_pyramid*L_pyramid(S',S)
-                 + lambda_sparse*L_sparse(increment)
+        + lambda_sparse*L_sparse(increment)
         D 组:    标准 PatchGAN 对抗损失（叠加 instance noise，幅度随训练退火）
 
     数据集模式: --dataset_mode unaligned（is_paired 在 MVP-1 中忽略，只用非配对数据）
@@ -42,6 +42,7 @@ class MVP1Model(BaseModel):
             parser.add_argument("--lr_D_ratio", type=float, default=0.2, help="判别器学习率 = lr * lr_D_ratio（TTUR，拖慢 D 防止碾压）")
             parser.add_argument("--instance_noise", type=float, default=0.3, help="喂给 D 的真假图叠加高斯噪声的初始幅度（图像在[-1,1]，0.3 足够把真假分布模糊到一起）")
             parser.add_argument("--noise_decay_iters", type=int, default=15000, help="噪声从初始值线性退火到 0 所需的迭代数")
+            parser.add_argument("--encoder_weights", type=str, default="", help="预编码器权重路径（留空=ImageNet VGG）")
         return parser
 
     def __init__(self, opt):
@@ -54,7 +55,9 @@ class MVP1Model(BaseModel):
             self.model_names = ["G", "Proj"]
 
         # --- 冻结编码器（不进 model_names，不保存不加载、不优化） ---
-        self.netEnc = FrozenVGG().to(self.device)
+        #self.netEnc = FrozenVGG().to(self.device)
+        self.netEnc = FrozenVGG(weights_path=opt.encoder_weights or None).to(self.device)
+
 
         # --- 可训练模块 ---
         self.netProj = ProjModule(in_ch=128, out_ch=512).to(self.device)
