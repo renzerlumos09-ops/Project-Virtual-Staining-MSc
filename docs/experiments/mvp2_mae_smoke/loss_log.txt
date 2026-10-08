@@ -1,0 +1,2 @@
+==== 2026-09-22 11:07:56 {'dataroot': './datasets/prostate_data/trainB', 'name': 'mvp2_mae_smoke', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 1, 'lr': 0.0001, 'init': 'imagenet', 'max_images': 64, 'num_threads': 0, 'save_epoch_freq': 5}
+[epoch 1] loss 0.4265 time 6s
