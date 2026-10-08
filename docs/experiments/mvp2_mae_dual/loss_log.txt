@@ -1,0 +1,24 @@
+==== 2026-10-03 21:34:46 {'dataroot': './datasets/prostate_data/trainA,./datasets/prostate_data/trainB', 'name': 'mae_dual_v1', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 30, 'lr': 0.0001, 'init': 'imagenet', 'max_images': None, 'num_threads': 0, 'save_epoch_freq': 5}
+==== 2026-10-03 23:38:50 {'dataroot': './datasets/prostate_data/trainA,./datasets/prostate_data/trainB', 'name': 'mae_dual_v1', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 5, 'lr': 0.0001, 'init': 'imagenet', 'max_images': None, 'num_threads': 0, 'save_epoch_freq': 5, 'resume': ''}
+==== 2026-10-04 12:53:01 {'dataroot': './datasets/prostate_data/trainA,./datasets/prostate_data/trainB', 'name': 'mae_dual_v1', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 30, 'lr': 0.0001, 'init': 'imagenet', 'max_images': None, 'num_threads': 0, 'save_epoch_freq': 5, 'resume': ''}
+[epoch 1] loss 0.1081 time 7328s
+[epoch 2] loss 0.0988 time 7121s
+[epoch 3] loss 0.0963 time 7155s
+[epoch 4] loss 0.0949 time 7157s
+[epoch 5] loss 0.0940 time 8338s
+[epoch 6] loss 0.0933 time 7122s
+[epoch 7] loss 0.0928 time 7119s
+[epoch 8] loss 0.0923 time 7130s
+[epoch 9] loss 0.0919 time 7112s
+==== 2026-10-05 22:58:48 {'dataroot': './datasets/prostate_data/trainA,./datasets/prostate_data/trainB', 'name': 'mae_dual_v1', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 5, 'lr': 0.0001, 'init': 'imagenet', 'max_images': None, 'num_threads': 0, 'save_epoch_freq': 5, 'resume': './checkpoints/mae_dual_v1/mae_encoder_latest.pth'}
+==== 2026-10-05 23:21:43 {'dataroot': './datasets/prostate_data/trainA,./datasets/prostate_data/trainB', 'name': 'mae_dual_v1', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 5, 'lr': 0.0001, 'init': 'imagenet', 'max_images': None, 'num_threads': 0, 'save_epoch_freq': 5, 'resume': './checkpoints/mae_dual_v1/mae_encoder_latest.pth'}
+[epoch 1] loss 0.0970 time 7717s
+[epoch 2] loss 0.0935 time 7267s
+[epoch 3] loss 0.0920 time 7247s
+==== 2026-10-06 19:56:03 {'dataroot': './datasets/prostate_data/trainA,./datasets/prostate_data/trainB', 'name': 'mae_dual_v1', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 5, 'lr': 0.0001, 'init': 'imagenet', 'max_images': None, 'num_threads': 0, 'save_epoch_freq': 5, 'resume': './checkpoints/mae_dual_v1/mae_encoder_latest.pth', 'epoch_offset': 13}
+==== 2026-10-06 21:40:12 {'dataroot': './datasets/prostate_data/trainA,./datasets/prostate_data/trainB', 'name': 'mae_dual_v1', 'checkpoints_dir': './checkpoints', 'size': 512, 'grid': 16, 'mask_ratio': 0.5, 'batch_size': 8, 'n_epochs': 5, 'lr': 0.0001, 'init': 'imagenet', 'max_images': None, 'num_threads': 0, 'save_epoch_freq': 5, 'resume': './checkpoints/mae_dual_v1/mae_encoder_latest.pth', 'epoch_offset': 13}
+[epoch 14] loss 0.0969 time 7316s
+[epoch 15] loss 0.0935 time 7256s
+[epoch 16] loss 0.0919 time 7222s
+[epoch 17] loss 0.0908 time 7224s
+[epoch 18] loss 0.0902 time 7225s

@@ -3,22 +3,22 @@
 mae_pretrain.py — MVP-2 Stage 1: IHC 域掩码图像建模（MIM）预训练
 =========================================================
 目的：在 trainB（IHC, ~52k 张 512x512 PNG）上预训练一个与 FrozenVGG 同构的
-VGG16 features 编码器，产出权重可无缝替换 MVP-1 中的 ImageNet 冻结编码器。
+VGG16 features 编码器，产出权重可无缝替换 MVP-1 中的 ImageNet 冻结编码器
 
 方法：SimMIM 式掩码图像建模
-  - 输入归一化到 [-1, 1]
-  - 随机遮住 mask_ratio 比例的 32x32 块（置 0 = 中灰）
-  - 编码器取 relu4_3 特征（512ch @ 64x64），轻量解码器重建整图
-  - L1 损失只计算被遮住的像素
+- 输入归一化到 [-1, 1]
+- 随机遮住 mask_ratio 比例的 32x32 块（置 0 = 中灰）
+- 编码器取 relu4_3 特征（512ch @ 64x64），轻量解码器重建整图
+- L1 损失只计算被遮住的像素
 
 用法（CMD，项目根目录下）：
-  python mvp2_mae_pretrain.py --dataroot ./datasets/prostate_data/trainB \
-      --name mae_ihc_v1 --batch_size 8 --n_epochs 30
+python mvp2_mae_pretrain.py --dataroot ./datasets/prostate_data/trainB \
+--name mae_ihc_v1 --batch_size 8 --n_epochs 30
 
 输出：
-  checkpoints/<name>/mae_encoder_latest.pth      编码器权重（VGG16 features 格式）
-  checkpoints/<name>/vis/epochXXX.png            每 epoch 重建对比图（原图/遮挡/重建）
-  checkpoints/<name>/loss_log.txt                训练日志
+checkpoints/<name>/mae_encoder_latest.pth      编码器权重（VGG16 features 格式）
+checkpoints/<name>/vis/epochXXX.png            每 epoch 重建对比图（原图/遮挡/重建）
+checkpoints/<name>/loss_log.txt                训练日志
 """
 
 import argparse
@@ -37,11 +37,14 @@ from torchvision import models, transforms, utils as vutils
 class IHCDataset(Dataset):
     """读取单目录下的 IHC PNG，归一化到 [-1, 1]。"""
 
-    def __init__(self, root, max_n=None):
-        self.paths = sorted(glob.glob(os.path.join(root, "*.png")))
+    def __init__(self, roots, max_n=None):
+        #self.paths = sorted(glob.glob(os.path.join(root, "*.png")))
+        self.paths = []
+        for r in roots.split(","):
+            self.paths += sorted(glob.glob(os.path.join(r.strip(), "*.png")))
         if max_n is not None:
             self.paths = self.paths[:max_n]
-        assert len(self.paths) > 0, f"no png found in {root}"
+        assert len(self.paths) > 0, f"no png found in {roots}"
         self.tf = transforms.Compose([
             transforms.ToTensor(),                    # [0,1]
             transforms.Normalize([0.5] * 3, [0.5] * 3)  # -> [-1,1]
@@ -140,6 +143,8 @@ def main():
     p.add_argument("--max_images", type=int, default=None, help="调试用：只用前 N 张")
     p.add_argument("--num_threads", type=int, default=0, help="Windows 下保持 0")
     p.add_argument("--save_epoch_freq", type=int, default=5)
+    p.add_argument("--resume", default="", help="从指定权重继续训练（分段跑用）")
+    p.add_argument("--epoch_offset", type=int, default=0, help="从指定 epoch 开始计数（分段跑用）")
     opt = p.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -153,6 +158,13 @@ def main():
                         num_workers=opt.num_threads, drop_last=True)
 
     model = MIMModel(opt.init).to(device)
+    if opt.resume:
+        model.encoder.features.load_state_dict(torch.load(opt.resume, map_location="cpu"))
+        print(f"[resume] encoder weights loaded from {opt.resume}")
+        dec_path = os.path.join(os.path.dirname(opt.resume), "mae_decoder_latest.pth")
+        if os.path.exists(dec_path):
+            model.decoder.load_state_dict(torch.load(dec_path, map_location="cpu"))
+            print(f"[resume] decoder weights loaded from {dec_path}")
     optimizer = torch.optim.AdamW(model.parameters(), lr=opt.lr, weight_decay=0.05)
     total_iters = opt.n_epochs * len(loader)
     scheduler = torch.optim.lr_scheduler.LambdaLR(
@@ -164,7 +176,7 @@ def main():
 
     print(f"dataset: {len(dataset)} images, {len(loader)} iters/epoch, device: {device}")
     it = 0
-    for epoch in range(1, opt.n_epochs + 1):
+    for epoch in range(1 + opt.epoch_offset, opt.n_epochs + 1 + opt.epoch_offset):
         model.train()
         t0, run_loss, nb = time.time(), 0.0, 0
         for x in loader:
@@ -199,15 +211,12 @@ def main():
             mask = random_block_mask(x.size(0), opt.grid, opt.mask_ratio, opt.size, device)
             rec = model(x.masked_fill(mask, 0.0)).clamp(-1, 1)
             grid_img = torch.cat([x[:4], x.masked_fill(mask, 0.0)[:4], rec[:4]])
-            vutils.save_image(grid_img * 0.5 + 0.5,
-                              os.path.join(vis_dir, f"epoch{epoch:03d}.png"),
-                              nrow=4, normalize=False)
+            vutils.save_image(grid_img * 0.5 + 0.5, os.path.join(vis_dir, f"epoch{epoch:03d}.png"), nrow=4, normalize=False)
         # 存编码器权重（只存 features，格式与 torchvision VGG16 一致）
         if epoch % opt.save_epoch_freq == 0 or epoch == opt.n_epochs:
-            torch.save(model.encoder.features.state_dict(),
-                       os.path.join(save_dir, f"mae_encoder_epoch{epoch}.pth"))
-            torch.save(model.encoder.features.state_dict(),
-                       os.path.join(save_dir, "mae_encoder_latest.pth"))
+            torch.save(model.encoder.features.state_dict(), os.path.join(save_dir, f"mae_encoder_epoch{epoch}.pth"))
+            torch.save(model.encoder.features.state_dict(), os.path.join(save_dir, "mae_encoder_latest.pth"))
+            torch.save(model.decoder.state_dict(), os.path.join(save_dir, "mae_decoder_latest.pth"))
             print(f"saved encoder weights at epoch {epoch}")
 
 
