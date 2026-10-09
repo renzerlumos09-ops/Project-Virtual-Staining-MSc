@@ -1,0 +1,451 @@
+================ Training Loss (Thu Oct  8 23:14:41 2026) ================
+[Rank 0] (epoch: 1, iters: 100, time: 0.206, data: 0.164) , G_GAN: 0.360, G_NCE: 5.090, Proj_distill: 0.148, Proj_pyramid: 0.405, Proj_sparse: 0.009, D: 0.384, noise_std: 0.299, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 200, time: 0.203, data: 0.069) , G_GAN: 0.202, G_NCE: 5.135, Proj_distill: 0.051, Proj_pyramid: 0.228, Proj_sparse: 0.005, D: 0.210, noise_std: 0.298, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 300, time: 0.321, data: 0.077) , G_GAN: 0.579, G_NCE: 4.576, Proj_distill: 0.031, Proj_pyramid: 0.196, Proj_sparse: 0.004, D: 0.476, noise_std: 0.297, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 400, time: 0.197, data: 0.082) , G_GAN: 0.145, G_NCE: 4.145, Proj_distill: 0.072, Proj_pyramid: 0.318, Proj_sparse: 0.007, D: 0.105, noise_std: 0.296, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 500, time: 0.203, data: 0.079) , G_GAN: 0.218, G_NCE: 4.116, Proj_distill: 0.019, Proj_pyramid: 0.174, Proj_sparse: 0.004, D: 0.097, noise_std: 0.295, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 600, time: 0.201, data: 0.078) , G_GAN: 0.198, G_NCE: 4.186, Proj_distill: 0.041, Proj_pyramid: 0.244, Proj_sparse: 0.005, D: 0.076, noise_std: 0.294, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 700, time: 0.201, data: 0.072) , G_GAN: 0.189, G_NCE: 3.261, Proj_distill: 0.025, Proj_pyramid: 0.196, Proj_sparse: 0.004, D: 0.051, noise_std: 0.293, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 800, time: 0.205, data: 0.074) , G_GAN: 0.156, G_NCE: 3.165, Proj_distill: 0.017, Proj_pyramid: 0.163, Proj_sparse: 0.003, D: 0.046, noise_std: 0.292, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 900, time: 0.203, data: 0.075) , G_GAN: 0.174, G_NCE: 3.363, Proj_distill: 0.013, Proj_pyramid: 0.138, Proj_sparse: 0.003, D: 0.051, noise_std: 0.291, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1000, time: 0.203, data: 0.073) , G_GAN: 0.216, G_NCE: 3.025, Proj_distill: 0.007, Proj_pyramid: 0.103, Proj_sparse: 0.002, D: 0.043, noise_std: 0.290, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1100, time: 0.208, data: 0.071) , G_GAN: 0.167, G_NCE: 3.296, Proj_distill: 0.015, Proj_pyramid: 0.155, Proj_sparse: 0.003, D: 0.030, noise_std: 0.289, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1200, time: 0.207, data: 0.081) , G_GAN: 0.267, G_NCE: 2.995, Proj_distill: 0.012, Proj_pyramid: 0.141, Proj_sparse: 0.003, D: 0.036, noise_std: 0.288, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1300, time: 0.205, data: 0.084) , G_GAN: 0.201, G_NCE: 2.840, Proj_distill: 0.015, Proj_pyramid: 0.155, Proj_sparse: 0.003, D: 0.015, noise_std: 0.287, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1400, time: 0.208, data: 0.082) , G_GAN: 0.193, G_NCE: 2.643, Proj_distill: 0.010, Proj_pyramid: 0.130, Proj_sparse: 0.003, D: 0.023, noise_std: 0.286, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1500, time: 0.208, data: 0.080) , G_GAN: 0.233, G_NCE: 2.957, Proj_distill: 0.007, Proj_pyramid: 0.105, Proj_sparse: 0.002, D: 0.021, noise_std: 0.285, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1600, time: 0.206, data: 0.084) , G_GAN: 0.183, G_NCE: 3.496, Proj_distill: 0.007, Proj_pyramid: 0.103, Proj_sparse: 0.002, D: 0.028, noise_std: 0.284, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 1700, time: 0.209, data: 0.078) , G_GAN: 0.229, G_NCE: 2.742, Proj_distill: 0.007, Proj_pyramid: 0.097, Proj_sparse: 0.002, D: 0.021, noise_std: 0.283, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 1800, time: 0.208, data: 0.085) , G_GAN: 0.225, G_NCE: 3.040, Proj_distill: 0.007, Proj_pyramid: 0.101, Proj_sparse: 0.002, D: 0.017, noise_std: 0.282, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 1900, time: 0.211, data: 0.077) , G_GAN: 0.196, G_NCE: 2.684, Proj_distill: 0.009, Proj_pyramid: 0.123, Proj_sparse: 0.002, D: 0.012, noise_std: 0.281, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 2000, time: 0.211, data: 0.077) , G_GAN: 0.222, G_NCE: 2.787, Proj_distill: 0.007, Proj_pyramid: 0.114, Proj_sparse: 0.002, D: 0.017, noise_std: 0.280, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 2100, time: 0.215, data: 0.078) , G_GAN: 0.215, G_NCE: 3.060, Proj_distill: 0.008, Proj_pyramid: 0.101, Proj_sparse: 0.002, D: 0.022, noise_std: 0.279, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 2200, time: 0.213, data: 0.079) , G_GAN: 0.180, G_NCE: 2.559, Proj_distill: 0.011, Proj_pyramid: 0.141, Proj_sparse: 0.003, D: 0.022, noise_std: 0.278, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 2300, time: 0.213, data: 0.074) , G_GAN: 0.201, G_NCE: 3.119, Proj_distill: 0.011, Proj_pyramid: 0.132, Proj_sparse: 0.003, D: 0.014, noise_std: 0.277, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 2400, time: 0.207, data: 0.074) , G_GAN: 0.227, G_NCE: 2.314, Proj_distill: 0.008, Proj_pyramid: 0.101, Proj_sparse: 0.002, D: 0.018, noise_std: 0.276, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 2500, time: 0.213, data: 0.076) , G_GAN: 0.270, G_NCE: 2.462, Proj_distill: 0.005, Proj_pyramid: 0.082, Proj_sparse: 0.002, D: 0.013, noise_std: 0.275, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 2600, time: 0.211, data: 0.078) , G_GAN: 0.226, G_NCE: 2.454, Proj_distill: 0.009, Proj_pyramid: 0.116, Proj_sparse: 0.002, D: 0.017, noise_std: 0.274, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 2700, time: 0.212, data: 0.063) , G_GAN: 0.263, G_NCE: 2.688, Proj_distill: 0.003, Proj_pyramid: 0.065, Proj_sparse: 0.001, D: 0.018, noise_std: 0.273, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 2800, time: 0.215, data: 0.073) , G_GAN: 0.152, G_NCE: 2.272, Proj_distill: 0.002, Proj_pyramid: 0.042, Proj_sparse: 0.001, D: 0.014, noise_std: 0.272, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 2900, time: 0.209, data: 0.071) , G_GAN: 0.277, G_NCE: 2.557, Proj_distill: 0.006, Proj_pyramid: 0.085, Proj_sparse: 0.002, D: 0.008, noise_std: 0.271, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 3000, time: 0.310, data: 0.066) , G_GAN: 0.228, G_NCE: 1.921, Proj_distill: 0.006, Proj_pyramid: 0.103, Proj_sparse: 0.002, D: 0.010, noise_std: 0.270, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 3100, time: 0.214, data: 0.080) , G_GAN: 0.234, G_NCE: 2.413, Proj_distill: 0.008, Proj_pyramid: 0.112, Proj_sparse: 0.002, D: 0.006, noise_std: 0.269, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 3200, time: 0.218, data: 0.079) , G_GAN: 0.199, G_NCE: 1.991, Proj_distill: 0.003, Proj_pyramid: 0.070, Proj_sparse: 0.001, D: 0.010, noise_std: 0.268, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 3300, time: 0.211, data: 0.076) , G_GAN: 0.263, G_NCE: 2.803, Proj_distill: 0.001, Proj_pyramid: 0.026, Proj_sparse: 0.001, D: 0.015, noise_std: 0.267, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 3400, time: 0.213, data: 0.076) , G_GAN: 0.232, G_NCE: 2.429, Proj_distill: 0.003, Proj_pyramid: 0.063, Proj_sparse: 0.001, D: 0.009, noise_std: 0.266, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 3500, time: 0.215, data: 0.070) , G_GAN: 0.272, G_NCE: 2.451, Proj_distill: 0.009, Proj_pyramid: 0.116, Proj_sparse: 0.002, D: 0.021, noise_std: 0.265, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 3600, time: 0.213, data: 0.080) , G_GAN: 0.146, G_NCE: 2.747, Proj_distill: 0.003, Proj_pyramid: 0.061, Proj_sparse: 0.001, D: 0.015, noise_std: 0.264, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 3700, time: 0.214, data: 0.082) , G_GAN: 0.254, G_NCE: 2.649, Proj_distill: 0.004, Proj_pyramid: 0.085, Proj_sparse: 0.002, D: 0.007, noise_std: 0.263, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 3800, time: 0.211, data: 0.076) , G_GAN: 0.275, G_NCE: 1.980, Proj_distill: 0.001, Proj_pyramid: 0.024, Proj_sparse: 0.001, D: 0.021, noise_std: 0.262, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 3900, time: 0.216, data: 0.077) , G_GAN: 0.201, G_NCE: 2.482, Proj_distill: 0.002, Proj_pyramid: 0.052, Proj_sparse: 0.001, D: 0.006, noise_std: 0.261, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 4000, time: 0.212, data: 0.080) , G_GAN: 0.233, G_NCE: 2.264, Proj_distill: 0.002, Proj_pyramid: 0.053, Proj_sparse: 0.001, D: 0.012, noise_std: 0.260, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 4100, time: 0.212, data: 0.082) , G_GAN: 0.295, G_NCE: 2.340, Proj_distill: 0.010, Proj_pyramid: 0.130, Proj_sparse: 0.003, D: 0.008, noise_std: 0.259, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 4200, time: 0.206, data: 0.071) , G_GAN: 0.230, G_NCE: 2.337, Proj_distill: 0.001, Proj_pyramid: 0.044, Proj_sparse: 0.001, D: 0.006, noise_std: 0.258, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 4300, time: 0.214, data: 0.082) , G_GAN: 0.180, G_NCE: 2.344, Proj_distill: 0.003, Proj_pyramid: 0.073, Proj_sparse: 0.001, D: 0.024, noise_std: 0.257, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 4400, time: 0.212, data: 0.074) , G_GAN: 0.210, G_NCE: 2.596, Proj_distill: 0.001, Proj_pyramid: 0.040, Proj_sparse: 0.001, D: 0.006, noise_std: 0.256, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 4500, time: 0.208, data: 0.071) , G_GAN: 0.253, G_NCE: 1.759, Proj_distill: 0.004, Proj_pyramid: 0.077, Proj_sparse: 0.002, D: 0.006, noise_std: 0.255, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 4600, time: 0.202, data: 0.084) , G_GAN: 0.211, G_NCE: 2.241, Proj_distill: 0.001, Proj_pyramid: 0.037, Proj_sparse: 0.001, D: 0.010, noise_std: 0.254, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 4700, time: 0.205, data: 0.083) , G_GAN: 0.257, G_NCE: 1.885, Proj_distill: 0.001, Proj_pyramid: 0.044, Proj_sparse: 0.001, D: 0.011, noise_std: 0.253, white_ratio: 0.005
+
+[Rank 0] (epoch: 1, iters: 4800, time: 0.214, data: 0.079) , G_GAN: 0.279, G_NCE: 2.415, Proj_distill: 0.005, Proj_pyramid: 0.088, Proj_sparse: 0.002, D: 0.007, noise_std: 0.252, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 4900, time: 0.213, data: 0.082) , G_GAN: 0.228, G_NCE: 2.593, Proj_distill: 0.002, Proj_pyramid: 0.055, Proj_sparse: 0.001, D: 0.005, noise_std: 0.251, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 5000, time: 0.213, data: 0.080) , G_GAN: 0.239, G_NCE: 2.250, Proj_distill: 0.005, Proj_pyramid: 0.091, Proj_sparse: 0.002, D: 0.006, noise_std: 0.250, white_ratio: 0.011
+
+[Rank 0] (epoch: 1, iters: 5100, time: 0.206, data: 0.078) , G_GAN: 0.258, G_NCE: 2.472, Proj_distill: 0.001, Proj_pyramid: 0.038, Proj_sparse: 0.001, D: 0.008, noise_std: 0.249, white_ratio: 0.005
+
+[Rank 0] (epoch: 1, iters: 5200, time: 0.210, data: 0.080) , G_GAN: 0.241, G_NCE: 2.363, Proj_distill: 0.001, Proj_pyramid: 0.045, Proj_sparse: 0.001, D: 0.008, noise_std: 0.248, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 5300, time: 0.213, data: 0.070) , G_GAN: 0.219, G_NCE: 2.436, Proj_distill: 0.002, Proj_pyramid: 0.047, Proj_sparse: 0.001, D: 0.006, noise_std: 0.247, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 5400, time: 0.212, data: 0.077) , G_GAN: 0.207, G_NCE: 1.843, Proj_distill: 0.002, Proj_pyramid: 0.050, Proj_sparse: 0.001, D: 0.008, noise_std: 0.246, white_ratio: 0.008
+
+[Rank 0] (epoch: 1, iters: 5500, time: 0.215, data: 0.077) , G_GAN: 0.278, G_NCE: 2.610, Proj_distill: 0.000, Proj_pyramid: 0.027, Proj_sparse: 0.001, D: 0.009, noise_std: 0.245, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 5600, time: 0.212, data: 0.079) , G_GAN: 0.201, G_NCE: 2.692, Proj_distill: 0.001, Proj_pyramid: 0.031, Proj_sparse: 0.001, D: 0.007, noise_std: 0.244, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 5700, time: 0.210, data: 0.076) , G_GAN: 0.241, G_NCE: 1.976, Proj_distill: 0.001, Proj_pyramid: 0.045, Proj_sparse: 0.001, D: 0.020, noise_std: 0.243, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 5800, time: 0.212, data: 0.069) , G_GAN: 0.219, G_NCE: 2.164, Proj_distill: 0.000, Proj_pyramid: 0.022, Proj_sparse: 0.000, D: 0.008, noise_std: 0.242, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 5900, time: 0.217, data: 0.086) , G_GAN: 0.200, G_NCE: 2.099, Proj_distill: 0.001, Proj_pyramid: 0.025, Proj_sparse: 0.001, D: 0.006, noise_std: 0.241, white_ratio: 0.010
+
+[Rank 0] (epoch: 1, iters: 6000, time: 0.293, data: 0.073) , G_GAN: 0.235, G_NCE: 1.926, Proj_distill: 0.001, Proj_pyramid: 0.039, Proj_sparse: 0.001, D: 0.040, noise_std: 0.240, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 6100, time: 0.212, data: 0.091) , G_GAN: 0.242, G_NCE: 1.907, Proj_distill: 0.001, Proj_pyramid: 0.043, Proj_sparse: 0.001, D: 0.004, noise_std: 0.239, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 6200, time: 0.211, data: 0.069) , G_GAN: 0.259, G_NCE: 2.611, Proj_distill: 0.003, Proj_pyramid: 0.057, Proj_sparse: 0.001, D: 0.007, noise_std: 0.238, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 6300, time: 0.209, data: 0.088) , G_GAN: 0.267, G_NCE: 1.758, Proj_distill: 0.001, Proj_pyramid: 0.033, Proj_sparse: 0.001, D: 0.007, noise_std: 0.237, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 6400, time: 0.217, data: 0.077) , G_GAN: 0.266, G_NCE: 2.782, Proj_distill: 0.001, Proj_pyramid: 0.034, Proj_sparse: 0.001, D: 0.009, noise_std: 0.236, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 6500, time: 0.214, data: 0.083) , G_GAN: 0.271, G_NCE: 2.060, Proj_distill: 0.001, Proj_pyramid: 0.032, Proj_sparse: 0.001, D: 0.007, noise_std: 0.235, white_ratio: 0.007
+
+[Rank 0] (epoch: 1, iters: 6600, time: 0.206, data: 0.075) , G_GAN: 0.270, G_NCE: 2.528, Proj_distill: 0.000, Proj_pyramid: 0.019, Proj_sparse: 0.000, D: 0.009, noise_std: 0.234, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 6700, time: 0.211, data: 0.076) , G_GAN: 0.242, G_NCE: 2.083, Proj_distill: 0.000, Proj_pyramid: 0.021, Proj_sparse: 0.000, D: 0.009, noise_std: 0.233, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 6800, time: 0.213, data: 0.082) , G_GAN: 0.265, G_NCE: 1.981, Proj_distill: 0.003, Proj_pyramid: 0.063, Proj_sparse: 0.001, D: 0.011, noise_std: 0.232, white_ratio: 0.005
+
+[Rank 0] (epoch: 1, iters: 6900, time: 0.210, data: 0.073) , G_GAN: 0.235, G_NCE: 2.650, Proj_distill: 0.000, Proj_pyramid: 0.020, Proj_sparse: 0.000, D: 0.007, noise_std: 0.231, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 7000, time: 0.213, data: 0.079) , G_GAN: 0.239, G_NCE: 1.814, Proj_distill: 0.001, Proj_pyramid: 0.049, Proj_sparse: 0.001, D: 0.009, noise_std: 0.230, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 7100, time: 0.205, data: 0.073) , G_GAN: 0.116, G_NCE: 2.023, Proj_distill: 0.000, Proj_pyramid: 0.024, Proj_sparse: 0.001, D: 0.038, noise_std: 0.229, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 7200, time: 0.217, data: 0.074) , G_GAN: 0.265, G_NCE: 2.107, Proj_distill: 0.000, Proj_pyramid: 0.023, Proj_sparse: 0.001, D: 0.003, noise_std: 0.228, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 7300, time: 0.211, data: 0.079) , G_GAN: 0.184, G_NCE: 1.841, Proj_distill: 0.000, Proj_pyramid: 0.019, Proj_sparse: 0.000, D: 0.003, noise_std: 0.227, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 7400, time: 0.214, data: 0.073) , G_GAN: 0.220, G_NCE: 2.592, Proj_distill: 0.000, Proj_pyramid: 0.010, Proj_sparse: 0.000, D: 0.011, noise_std: 0.226, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 7500, time: 0.209, data: 0.073) , G_GAN: 0.255, G_NCE: 2.011, Proj_distill: 0.000, Proj_pyramid: 0.018, Proj_sparse: 0.000, D: 0.024, noise_std: 0.225, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 7600, time: 0.206, data: 0.076) , G_GAN: 0.268, G_NCE: 2.309, Proj_distill: 0.000, Proj_pyramid: 0.017, Proj_sparse: 0.000, D: 0.005, noise_std: 0.224, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 7700, time: 0.212, data: 0.082) , G_GAN: 0.248, G_NCE: 2.009, Proj_distill: 0.000, Proj_pyramid: 0.014, Proj_sparse: 0.000, D: 0.006, noise_std: 0.223, white_ratio: 0.006
+
+[Rank 0] (epoch: 1, iters: 7800, time: 0.202, data: 0.071) , G_GAN: 0.228, G_NCE: 1.746, Proj_distill: 0.000, Proj_pyramid: 0.013, Proj_sparse: 0.000, D: 0.017, noise_std: 0.222, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 7900, time: 0.212, data: 0.077) , G_GAN: 0.202, G_NCE: 2.329, Proj_distill: 0.000, Proj_pyramid: 0.018, Proj_sparse: 0.000, D: 0.007, noise_std: 0.221, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 8000, time: 0.208, data: 0.073) , G_GAN: 0.253, G_NCE: 2.258, Proj_distill: 0.000, Proj_pyramid: 0.015, Proj_sparse: 0.000, D: 0.003, noise_std: 0.220, white_ratio: 0.011
+
+[Rank 0] (epoch: 1, iters: 8100, time: 0.213, data: 0.076) , G_GAN: 0.198, G_NCE: 2.500, Proj_distill: 0.001, Proj_pyramid: 0.054, Proj_sparse: 0.001, D: 0.010, noise_std: 0.219, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 8200, time: 0.210, data: 0.078) , G_GAN: 0.220, G_NCE: 1.699, Proj_distill: 0.001, Proj_pyramid: 0.031, Proj_sparse: 0.001, D: 0.006, noise_std: 0.218, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 8300, time: 0.213, data: 0.095) , G_GAN: 0.325, G_NCE: 1.908, Proj_distill: 0.000, Proj_pyramid: 0.013, Proj_sparse: 0.000, D: 0.028, noise_std: 0.217, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 8400, time: 0.212, data: 0.074) , G_GAN: 0.229, G_NCE: 1.617, Proj_distill: 0.001, Proj_pyramid: 0.028, Proj_sparse: 0.001, D: 0.005, noise_std: 0.216, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 8500, time: 0.204, data: 0.090) , G_GAN: 0.199, G_NCE: 2.223, Proj_distill: 0.000, Proj_pyramid: 0.018, Proj_sparse: 0.000, D: 0.006, noise_std: 0.215, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 8600, time: 0.212, data: 0.073) , G_GAN: 0.272, G_NCE: 1.867, Proj_distill: 0.000, Proj_pyramid: 0.012, Proj_sparse: 0.000, D: 0.006, noise_std: 0.214, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 8700, time: 0.216, data: 0.072) , G_GAN: 0.197, G_NCE: 2.417, Proj_distill: 0.000, Proj_pyramid: 0.007, Proj_sparse: 0.000, D: 0.009, noise_std: 0.213, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 8800, time: 0.211, data: 0.069) , G_GAN: 0.227, G_NCE: 1.889, Proj_distill: 0.001, Proj_pyramid: 0.028, Proj_sparse: 0.001, D: 0.013, noise_std: 0.212, white_ratio: 0.007
+
+[Rank 0] (epoch: 1, iters: 8900, time: 0.213, data: 0.075) , G_GAN: 0.285, G_NCE: 2.196, Proj_distill: 0.000, Proj_pyramid: 0.010, Proj_sparse: 0.000, D: 0.003, noise_std: 0.211, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 9000, time: 0.309, data: 0.075) , G_GAN: 0.246, G_NCE: 1.602, Proj_distill: 0.000, Proj_pyramid: 0.009, Proj_sparse: 0.000, D: 0.014, noise_std: 0.210, white_ratio: 0.006
+
+[Rank 0] (epoch: 1, iters: 9100, time: 0.212, data: 0.083) , G_GAN: 0.240, G_NCE: 1.682, Proj_distill: 0.000, Proj_pyramid: 0.009, Proj_sparse: 0.000, D: 0.005, noise_std: 0.209, white_ratio: 0.008
+
+[Rank 0] (epoch: 1, iters: 9200, time: 0.210, data: 0.091) , G_GAN: 0.220, G_NCE: 2.184, Proj_distill: 0.000, Proj_pyramid: 0.012, Proj_sparse: 0.000, D: 0.005, noise_std: 0.208, white_ratio: 0.005
+
+[Rank 0] (epoch: 1, iters: 9300, time: 0.214, data: 0.083) , G_GAN: 0.272, G_NCE: 1.853, Proj_distill: 0.000, Proj_pyramid: 0.013, Proj_sparse: 0.000, D: 0.010, noise_std: 0.207, white_ratio: 0.005
+
+[Rank 0] (epoch: 1, iters: 9400, time: 0.213, data: 0.077) , G_GAN: 0.253, G_NCE: 1.894, Proj_distill: 0.000, Proj_pyramid: 0.016, Proj_sparse: 0.000, D: 0.004, noise_std: 0.206, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 9500, time: 0.208, data: 0.073) , G_GAN: 0.265, G_NCE: 1.981, Proj_distill: 0.000, Proj_pyramid: 0.014, Proj_sparse: 0.000, D: 0.003, noise_std: 0.205, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 9600, time: 0.211, data: 0.081) , G_GAN: 0.192, G_NCE: 1.982, Proj_distill: 0.000, Proj_pyramid: 0.011, Proj_sparse: 0.000, D: 0.004, noise_std: 0.204, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 9700, time: 0.211, data: 0.079) , G_GAN: 0.279, G_NCE: 2.740, Proj_distill: 0.000, Proj_pyramid: 0.007, Proj_sparse: 0.000, D: 0.003, noise_std: 0.203, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 9800, time: 0.215, data: 0.072) , G_GAN: 0.261, G_NCE: 1.492, Proj_distill: 0.000, Proj_pyramid: 0.006, Proj_sparse: 0.000, D: 0.004, noise_std: 0.202, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 9900, time: 0.217, data: 0.075) , G_GAN: 0.201, G_NCE: 2.861, Proj_distill: 0.002, Proj_pyramid: 0.038, Proj_sparse: 0.001, D: 0.010, noise_std: 0.201, white_ratio: 0.003
+
+[Rank 0] (epoch: 1, iters: 10000, time: 0.220, data: 0.081) , G_GAN: 0.180, G_NCE: 2.536, Proj_distill: 0.000, Proj_pyramid: 0.005, Proj_sparse: 0.000, D: 0.010, noise_std: 0.200, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 100, time: 0.207, data: 0.081) , G_GAN: 0.237, G_NCE: 1.940, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.004, noise_std: 0.199, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 200, time: 0.297, data: 0.069) , G_GAN: 0.233, G_NCE: 3.059, Proj_distill: 0.000, Proj_pyramid: 0.013, Proj_sparse: 0.000, D: 0.004, noise_std: 0.198, white_ratio: 0.008
+
+[Rank 0] (epoch: 2, iters: 300, time: 0.212, data: 0.085) , G_GAN: 0.270, G_NCE: 1.990, Proj_distill: 0.000, Proj_pyramid: 0.005, Proj_sparse: 0.000, D: 0.004, noise_std: 0.197, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 400, time: 0.210, data: 0.078) , G_GAN: 0.264, G_NCE: 1.824, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.002, noise_std: 0.196, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 500, time: 0.212, data: 0.072) , G_GAN: 0.244, G_NCE: 1.859, Proj_distill: 0.000, Proj_pyramid: 0.006, Proj_sparse: 0.000, D: 0.002, noise_std: 0.195, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 600, time: 0.204, data: 0.073) , G_GAN: 0.187, G_NCE: 2.028, Proj_distill: 0.000, Proj_pyramid: 0.014, Proj_sparse: 0.000, D: 0.009, noise_std: 0.194, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 700, time: 0.209, data: 0.080) , G_GAN: 0.255, G_NCE: 2.030, Proj_distill: 0.000, Proj_pyramid: 0.006, Proj_sparse: 0.000, D: 0.009, noise_std: 0.193, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 800, time: 0.211, data: 0.074) , G_GAN: 0.168, G_NCE: 2.155, Proj_distill: 0.000, Proj_pyramid: 0.005, Proj_sparse: 0.000, D: 0.008, noise_std: 0.192, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 900, time: 0.210, data: 0.076) , G_GAN: 0.242, G_NCE: 1.911, Proj_distill: 0.000, Proj_pyramid: 0.006, Proj_sparse: 0.000, D: 0.011, noise_std: 0.191, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 1000, time: 0.211, data: 0.069) , G_GAN: 0.301, G_NCE: 1.826, Proj_distill: 0.000, Proj_pyramid: 0.005, Proj_sparse: 0.000, D: 0.019, noise_std: 0.190, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 1100, time: 0.207, data: 0.082) , G_GAN: 0.249, G_NCE: 1.764, Proj_distill: 0.000, Proj_pyramid: 0.003, Proj_sparse: 0.000, D: 0.003, noise_std: 0.189, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 1200, time: 0.213, data: 0.073) , G_GAN: 0.272, G_NCE: 1.609, Proj_distill: 0.000, Proj_pyramid: 0.005, Proj_sparse: 0.000, D: 0.020, noise_std: 0.188, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 1300, time: 0.218, data: 0.077) , G_GAN: 0.267, G_NCE: 2.143, Proj_distill: 0.000, Proj_pyramid: 0.005, Proj_sparse: 0.000, D: 0.007, noise_std: 0.187, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 1400, time: 0.210, data: 0.080) , G_GAN: 0.254, G_NCE: 2.342, Proj_distill: 0.000, Proj_pyramid: 0.007, Proj_sparse: 0.000, D: 0.004, noise_std: 0.186, white_ratio: 0.006
+
+[Rank 0] (epoch: 2, iters: 1500, time: 0.210, data: 0.076) , G_GAN: 0.199, G_NCE: 2.092, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.009, noise_std: 0.185, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 1600, time: 0.215, data: 0.075) , G_GAN: 0.264, G_NCE: 1.595, Proj_distill: 0.003, Proj_pyramid: 0.077, Proj_sparse: 0.002, D: 0.003, noise_std: 0.184, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 1700, time: 0.215, data: 0.076) , G_GAN: 0.233, G_NCE: 2.149, Proj_distill: 0.000, Proj_pyramid: 0.007, Proj_sparse: 0.000, D: 0.004, noise_std: 0.183, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 1800, time: 0.213, data: 0.074) , G_GAN: 0.223, G_NCE: 1.934, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.002, noise_std: 0.182, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 1900, time: 0.216, data: 0.077) , G_GAN: 0.250, G_NCE: 1.896, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.003, noise_std: 0.181, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 2000, time: 0.313, data: 0.074) , G_GAN: 0.252, G_NCE: 2.018, Proj_distill: 0.000, Proj_pyramid: 0.005, Proj_sparse: 0.000, D: 0.004, noise_std: 0.180, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 2100, time: 0.210, data: 0.082) , G_GAN: 0.257, G_NCE: 1.687, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.002, noise_std: 0.179, white_ratio: 0.006
+
+[Rank 0] (epoch: 2, iters: 2200, time: 0.212, data: 0.071) , G_GAN: 0.253, G_NCE: 1.637, Proj_distill: 0.000, Proj_pyramid: 0.007, Proj_sparse: 0.000, D: 0.004, noise_std: 0.178, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 2300, time: 0.212, data: 0.081) , G_GAN: 0.253, G_NCE: 1.355, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.003, noise_std: 0.177, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 2400, time: 0.207, data: 0.074) , G_GAN: 0.257, G_NCE: 1.860, Proj_distill: 0.000, Proj_pyramid: 0.006, Proj_sparse: 0.000, D: 0.008, noise_std: 0.176, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 2500, time: 0.220, data: 0.082) , G_GAN: 0.275, G_NCE: 2.199, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.003, noise_std: 0.175, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 2600, time: 0.208, data: 0.081) , G_GAN: 0.272, G_NCE: 2.072, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.007, noise_std: 0.174, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 2700, time: 0.215, data: 0.073) , G_GAN: 0.248, G_NCE: 2.624, Proj_distill: 0.002, Proj_pyramid: 0.013, Proj_sparse: 0.000, D: 0.001, noise_std: 0.173, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 2800, time: 0.216, data: 0.081) , G_GAN: 0.265, G_NCE: 2.010, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.014, noise_std: 0.172, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 2900, time: 0.203, data: 0.068) , G_GAN: 0.274, G_NCE: 1.592, Proj_distill: 0.000, Proj_pyramid: 0.007, Proj_sparse: 0.000, D: 0.003, noise_std: 0.171, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 3000, time: 0.214, data: 0.072) , G_GAN: 0.238, G_NCE: 2.324, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.007, noise_std: 0.170, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 3100, time: 0.202, data: 0.070) , G_GAN: 0.267, G_NCE: 1.809, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.018, noise_std: 0.169, white_ratio: 0.009
+
+[Rank 0] (epoch: 2, iters: 3200, time: 0.203, data: 0.084) , G_GAN: 0.254, G_NCE: 1.739, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.002, noise_std: 0.168, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 3300, time: 0.208, data: 0.082) , G_GAN: 0.265, G_NCE: 1.788, Proj_distill: 0.000, Proj_pyramid: 0.002, Proj_sparse: 0.000, D: 0.002, noise_std: 0.167, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 3400, time: 0.210, data: 0.072) , G_GAN: 0.247, G_NCE: 1.900, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.004, noise_std: 0.166, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 3500, time: 0.208, data: 0.074) , G_GAN: 0.250, G_NCE: 2.057, Proj_distill: 0.000, Proj_pyramid: 0.002, Proj_sparse: 0.000, D: 0.005, noise_std: 0.165, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 3600, time: 0.221, data: 0.084) , G_GAN: 0.223, G_NCE: 1.839, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.002, noise_std: 0.164, white_ratio: 0.007
+
+[Rank 0] (epoch: 2, iters: 3700, time: 0.214, data: 0.077) , G_GAN: 0.186, G_NCE: 2.473, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.012, noise_std: 0.163, white_ratio: 0.006
+
+[Rank 0] (epoch: 2, iters: 3800, time: 0.215, data: 0.077) , G_GAN: 0.224, G_NCE: 1.935, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.008, noise_std: 0.162, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 3900, time: 0.220, data: 0.075) , G_GAN: 0.254, G_NCE: 1.689, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.161, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 4000, time: 0.213, data: 0.072) , G_GAN: 0.237, G_NCE: 1.832, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.160, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 4100, time: 0.217, data: 0.077) , G_GAN: 0.243, G_NCE: 2.595, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.002, noise_std: 0.159, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 4200, time: 0.215, data: 0.074) , G_GAN: 0.264, G_NCE: 1.958, Proj_distill: 0.000, Proj_pyramid: 0.006, Proj_sparse: 0.000, D: 0.005, noise_std: 0.158, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 4300, time: 0.210, data: 0.075) , G_GAN: 0.271, G_NCE: 4.994, Proj_distill: 0.018, Proj_pyramid: 0.044, Proj_sparse: 0.001, D: 0.005, noise_std: 0.157, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 4400, time: 0.211, data: 0.081) , G_GAN: 0.271, G_NCE: 1.890, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.004, noise_std: 0.156, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 4500, time: 0.216, data: 0.064) , G_GAN: 0.241, G_NCE: 1.819, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.155, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 4600, time: 0.211, data: 0.073) , G_GAN: 0.293, G_NCE: 1.740, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.012, noise_std: 0.154, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 4700, time: 0.211, data: 0.077) , G_GAN: 0.220, G_NCE: 1.673, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.001, noise_std: 0.153, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 4800, time: 0.213, data: 0.069) , G_GAN: 0.235, G_NCE: 1.363, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.006, noise_std: 0.152, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 4900, time: 0.210, data: 0.067) , G_GAN: 0.274, G_NCE: 1.750, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.151, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 5000, time: 0.298, data: 0.069) , G_GAN: 0.255, G_NCE: 1.834, Proj_distill: 0.000, Proj_pyramid: 0.007, Proj_sparse: 0.000, D: 0.002, noise_std: 0.150, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 5100, time: 0.206, data: 0.078) , G_GAN: 0.252, G_NCE: 1.596, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.149, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 5200, time: 0.209, data: 0.072) , G_GAN: 0.291, G_NCE: 2.350, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.006, noise_std: 0.148, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 5300, time: 0.215, data: 0.075) , G_GAN: 0.273, G_NCE: 2.685, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.147, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 5400, time: 0.210, data: 0.095) , G_GAN: 0.233, G_NCE: 1.712, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.146, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 5500, time: 0.212, data: 0.081) , G_GAN: 0.259, G_NCE: 2.026, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.145, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 5600, time: 0.207, data: 0.074) , G_GAN: 0.238, G_NCE: 1.742, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.007, noise_std: 0.144, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 5700, time: 0.212, data: 0.076) , G_GAN: 0.242, G_NCE: 1.700, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.143, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 5800, time: 0.214, data: 0.071) , G_GAN: 0.240, G_NCE: 1.667, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.142, white_ratio: 0.004
+
+[Rank 0] (epoch: 2, iters: 5900, time: 0.217, data: 0.086) , G_GAN: 0.270, G_NCE: 1.653, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.002, noise_std: 0.141, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6000, time: 0.211, data: 0.088) , G_GAN: 0.251, G_NCE: 1.856, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.140, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6100, time: 0.221, data: 0.089) , G_GAN: 0.251, G_NCE: 1.473, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.139, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6200, time: 0.220, data: 0.078) , G_GAN: 0.253, G_NCE: 3.186, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.138, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6300, time: 0.209, data: 0.070) , G_GAN: 0.253, G_NCE: 1.630, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.006, noise_std: 0.137, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 6400, time: 0.215, data: 0.076) , G_GAN: 0.242, G_NCE: 1.552, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.136, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6500, time: 0.214, data: 0.076) , G_GAN: 0.269, G_NCE: 1.621, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.135, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6600, time: 0.205, data: 0.082) , G_GAN: 0.260, G_NCE: 1.957, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.134, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6700, time: 0.211, data: 0.073) , G_GAN: 0.232, G_NCE: 1.395, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.133, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 6800, time: 0.214, data: 0.075) , G_GAN: 0.257, G_NCE: 1.913, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.132, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 6900, time: 0.208, data: 0.066) , G_GAN: 0.258, G_NCE: 1.591, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.131, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7000, time: 0.204, data: 0.076) , G_GAN: 0.249, G_NCE: 1.778, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.130, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7100, time: 0.211, data: 0.082) , G_GAN: 0.245, G_NCE: 1.745, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.129, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7200, time: 0.210, data: 0.075) , G_GAN: 0.256, G_NCE: 1.823, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.002, noise_std: 0.128, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7300, time: 0.206, data: 0.078) , G_GAN: 0.287, G_NCE: 1.880, Proj_distill: 0.000, Proj_pyramid: 0.004, Proj_sparse: 0.000, D: 0.025, noise_std: 0.127, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7400, time: 0.220, data: 0.069) , G_GAN: 0.237, G_NCE: 1.665, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.126, white_ratio: 0.003
+
+[Rank 0] (epoch: 2, iters: 7500, time: 0.211, data: 0.069) , G_GAN: 0.249, G_NCE: 1.762, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.125, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7600, time: 0.216, data: 0.072) , G_GAN: 0.266, G_NCE: 2.766, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.009, noise_std: 0.124, white_ratio: 0.001
+
+[Rank 0] (epoch: 2, iters: 7700, time: 0.213, data: 0.089) , G_GAN: 0.250, G_NCE: 1.655, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.123, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7800, time: 0.214, data: 0.076) , G_GAN: 0.233, G_NCE: 1.816, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.122, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 7900, time: 0.216, data: 0.072) , G_GAN: 0.249, G_NCE: 2.046, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.121, white_ratio: 0.005
+
+[Rank 0] (epoch: 2, iters: 8000, time: 0.300, data: 0.080) , G_GAN: 0.264, G_NCE: 1.567, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.011, noise_std: 0.120, white_ratio: 0.002
+
+[Rank 0] (epoch: 2, iters: 8100, time: 0.209, data: 0.088) , G_GAN: 0.249, G_NCE: 1.710, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.119, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 8200, time: 0.209, data: 0.074) , G_GAN: 0.263, G_NCE: 1.926, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.118, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 8300, time: 0.211, data: 0.073) , G_GAN: 0.253, G_NCE: 1.731, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.117, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 8400, time: 0.208, data: 0.076) , G_GAN: 0.266, G_NCE: 2.093, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.116, white_ratio: 0.005
+
+[Rank 0] (epoch: 2, iters: 8500, time: 0.215, data: 0.077) , G_GAN: 0.250, G_NCE: 1.958, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.115, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 8600, time: 0.207, data: 0.066) , G_GAN: 0.258, G_NCE: 1.624, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.114, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 8700, time: 0.204, data: 0.080) , G_GAN: 0.244, G_NCE: 1.677, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.113, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 8800, time: 0.208, data: 0.077) , G_GAN: 0.252, G_NCE: 2.001, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.112, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 8900, time: 0.214, data: 0.073) , G_GAN: 0.255, G_NCE: 1.869, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.111, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9000, time: 0.211, data: 0.080) , G_GAN: 0.247, G_NCE: 1.821, Proj_distill: 0.000, Proj_pyramid: 0.001, Proj_sparse: 0.000, D: 0.002, noise_std: 0.110, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9100, time: 0.213, data: 0.072) , G_GAN: 0.247, G_NCE: 1.734, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.109, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9200, time: 0.209, data: 0.078) , G_GAN: 0.241, G_NCE: 1.549, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.108, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9300, time: 0.213, data: 0.071) , G_GAN: 0.230, G_NCE: 1.887, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.107, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9400, time: 0.210, data: 0.064) , G_GAN: 0.245, G_NCE: 1.412, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.106, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9500, time: 0.214, data: 0.076) , G_GAN: 0.252, G_NCE: 1.603, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.105, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9600, time: 0.209, data: 0.080) , G_GAN: 0.256, G_NCE: 1.533, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.104, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9700, time: 0.208, data: 0.074) , G_GAN: 0.251, G_NCE: 1.382, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.103, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9800, time: 0.204, data: 0.080) , G_GAN: 0.264, G_NCE: 1.520, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.005, noise_std: 0.102, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 9900, time: 0.221, data: 0.078) , G_GAN: 0.260, G_NCE: 1.841, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.101, white_ratio: 0.000
+
+[Rank 0] (epoch: 2, iters: 10000, time: 0.213, data: 0.069) , G_GAN: 0.256, G_NCE: 1.392, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.100, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 100, time: 0.303, data: 0.089) , G_GAN: 0.252, G_NCE: 1.696, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.099, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 200, time: 0.217, data: 0.071) , G_GAN: 0.262, G_NCE: 1.870, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.098, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 300, time: 0.216, data: 0.079) , G_GAN: 0.259, G_NCE: 1.578, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.097, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 400, time: 0.216, data: 0.090) , G_GAN: 0.246, G_NCE: 2.115, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.096, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 500, time: 0.228, data: 0.081) , G_GAN: 0.231, G_NCE: 1.863, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.095, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 600, time: 0.193, data: 0.080) , G_GAN: 0.259, G_NCE: 2.309, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.094, white_ratio: 0.001
+
+[Rank 0] (epoch: 3, iters: 700, time: 0.227, data: 0.183) , G_GAN: 0.293, G_NCE: 2.943, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.093, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 800, time: 0.211, data: 0.067) , G_GAN: 0.247, G_NCE: 1.496, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.000, noise_std: 0.092, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 900, time: 0.217, data: 0.087) , G_GAN: 0.248, G_NCE: 1.905, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.091, white_ratio: 0.001
+
+[Rank 0] (epoch: 3, iters: 1000, time: 0.321, data: 0.092) , G_GAN: 0.239, G_NCE: 1.625, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.090, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1100, time: 0.215, data: 0.079) , G_GAN: 0.262, G_NCE: 1.526, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.089, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1200, time: 0.215, data: 0.078) , G_GAN: 0.254, G_NCE: 2.059, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.088, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1300, time: 0.219, data: 0.075) , G_GAN: 0.269, G_NCE: 1.969, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.087, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1400, time: 0.195, data: 0.082) , G_GAN: 0.248, G_NCE: 2.241, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.086, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1500, time: 0.228, data: 0.118) , G_GAN: 0.247, G_NCE: 1.534, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.085, white_ratio: 0.001
+
+[Rank 0] (epoch: 3, iters: 1600, time: 0.226, data: 0.073) , G_GAN: 0.256, G_NCE: 1.946, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.084, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1700, time: 0.225, data: 0.068) , G_GAN: 0.251, G_NCE: 1.334, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.083, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1800, time: 0.232, data: 0.084) , G_GAN: 0.248, G_NCE: 1.370, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.082, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 1900, time: 0.222, data: 0.084) , G_GAN: 0.239, G_NCE: 1.863, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.081, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 2000, time: 0.223, data: 0.076) , G_GAN: 0.250, G_NCE: 1.669, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.004, noise_std: 0.080, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 2100, time: 0.236, data: 0.086) , G_GAN: 0.253, G_NCE: 1.798, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.002, noise_std: 0.079, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 2200, time: 0.233, data: 0.081) , G_GAN: 0.263, G_NCE: 1.600, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.003, noise_std: 0.078, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 2300, time: 0.227, data: 0.101) , G_GAN: 0.237, G_NCE: 1.320, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.077, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 2400, time: 0.227, data: 0.087) , G_GAN: 0.244, G_NCE: 1.421, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.076, white_ratio: 0.000
+
+[Rank 0] (epoch: 3, iters: 2500, time: 0.226, data: 0.068) , G_GAN: 0.260, G_NCE: 2.024, Proj_distill: 0.000, Proj_pyramid: 0.000, Proj_sparse: 0.000, D: 0.001, noise_std: 0.075, white_ratio: 0.000
+
