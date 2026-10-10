@@ -121,7 +121,26 @@ class MVP2Model(BaseModel):
     # ---------------- Proj 组损失 ----------------
     def backward_Proj(self):
         # 1) 蒸馏：S' 不偏离骨架 S
-        self.loss_Proj_distill = F.mse_loss(self.S_prime, self.S) * self.opt.lambda_distill
+        #self.loss_Proj_distill = F.mse_loss(self.S_prime, self.S) * self.opt.lambda_distill
+        # 1) 蒸馏（A1）：S' 向真 IHC 的高层语义特征 S_B 靠近（跨域预测编码）
+        #with torch.no_grad():
+        #    S_B = self.netEnc(self.real_B)[2]  # 骨架 (B,512,H/8,W/8)
+        #    if S_B.shape[2:] != self.S_prime.shape[2:]:
+        #        S_B = F.interpolate(S_B, size=self.S_prime.shape[2:], mode="bilinear", align_corners=False)
+                #    self.loss_Proj_distill = F.mse_loss(self.S_prime, S_B) * self.opt.lambda_distill
+        # 1) 蒸馏（A2）：S' 向真 IHC 的高层语义特征 S_B 靠近（跨域预测编码，InfoNCE）
+        # 互信息下界最大化，非MSE回归，用于学习不平均解
+        with torch.no_grad():
+            S_B = self.netEnc(self.real_B)[2]  # 骨架 (B,512,H/8,W/8)
+            if S_B.shape[2:] != self.S_prime.shape[2:]:
+                S_B = F.interpolate(S_B, size=self.S_prime.shape[2:], mode="bilinear", align_corners=False)
+        q = F.normalize(self.S_prime.flatten(2), dim=1) # (B, C, H*W)
+        kp = F.normalize(S_B.flatten(2), dim=1) # IHC patch集（正样本）
+        kn = F.normalize(self.S.flatten(2), dim=1) # AF patch集（负样本）
+        pos = torch.bmm(q.transpose(1, 2), kp).mean(dim=2) / self.opt.nce_temp
+        neg = torch.bmm(q.transpose(1, 2), kn).mean(dim=2) / self.opt.nce_temp
+        self.loss_Proj_distill = F.softplus(neg - pos).mean () * self.opt.lambda_distill
+
 
         # 2) 少尺度金字塔：约束 S' 的多尺度结构（2 个尺度即可）
         p = F.l1_loss(self.S_prime, self.S)
