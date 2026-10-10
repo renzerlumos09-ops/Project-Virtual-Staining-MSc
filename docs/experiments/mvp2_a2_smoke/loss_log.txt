@@ -1,0 +1,41 @@
+================ Training Loss (Sat Oct 10 10:26:08 2026) ================
+[Rank 0] (epoch: 1, iters: 10, time: 0.230, data: 0.109) , G_GAN: 0.711, G_NCE: 1.375, Proj_distill: 0.121, Proj_pyramid: 1.462, Proj_sparse: 0.037, D: 0.867, noise_std: 0.300, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 20, time: 0.233, data: 0.031) , G_GAN: 0.485, G_NCE: 1.373, Proj_distill: 0.107, Proj_pyramid: 0.798, Proj_sparse: 0.020, D: 0.601, noise_std: 0.300, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 30, time: 0.231, data: 0.034) , G_GAN: 0.399, G_NCE: 1.361, Proj_distill: 0.064, Proj_pyramid: 0.519, Proj_sparse: 0.013, D: 0.471, noise_std: 0.299, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 40, time: 0.229, data: 0.037) , G_GAN: 0.328, G_NCE: 1.341, Proj_distill: 0.044, Proj_pyramid: 0.479, Proj_sparse: 0.011, D: 0.380, noise_std: 0.299, white_ratio: 0.016
+
+[Rank 0] (epoch: 1, iters: 50, time: 0.423, data: 0.035) , G_GAN: 0.398, G_NCE: 1.325, Proj_distill: 0.031, Proj_pyramid: 0.364, Proj_sparse: 0.008, D: 0.355, noise_std: 0.299, white_ratio: 0.012
+
+[Rank 0] (epoch: 1, iters: 60, time: 0.234, data: 0.040) , G_GAN: 0.198, G_NCE: 1.328, Proj_distill: 0.076, Proj_pyramid: 0.381, Proj_sparse: 0.009, D: 0.380, noise_std: 0.299, white_ratio: 0.008
+
+[Rank 0] (epoch: 1, iters: 70, time: 0.236, data: 0.037) , G_GAN: 0.174, G_NCE: 1.304, Proj_distill: 0.037, Proj_pyramid: 0.352, Proj_sparse: 0.008, D: 0.242, noise_std: 0.299, white_ratio: 0.027
+
+[Rank 0] (epoch: 1, iters: 80, time: 0.242, data: 0.034) , G_GAN: 0.480, G_NCE: 1.317, Proj_distill: 0.039, Proj_pyramid: 0.234, Proj_sparse: 0.005, D: 0.436, noise_std: 0.298, white_ratio: 0.004
+
+[Rank 0] (epoch: 1, iters: 90, time: 0.237, data: 0.039) , G_GAN: 0.150, G_NCE: 1.280, Proj_distill: 0.015, Proj_pyramid: 0.329, Proj_sparse: 0.007, D: 0.274, noise_std: 0.298, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 100, time: 0.406, data: 0.030) , G_GAN: 0.119, G_NCE: 1.256, Proj_distill: 0.024, Proj_pyramid: 0.301, Proj_sparse: 0.006, D: 0.170, noise_std: 0.298, white_ratio: 0.001
+
+[Rank 0] (epoch: 1, iters: 110, time: 0.236, data: 0.037) , G_GAN: 0.146, G_NCE: 1.301, Proj_distill: 0.021, Proj_pyramid: 0.951, Proj_sparse: 0.019, D: 0.147, noise_std: 0.298, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 120, time: 0.234, data: 0.034) , G_GAN: 0.144, G_NCE: 1.187, Proj_distill: 0.010, Proj_pyramid: 0.369, Proj_sparse: 0.008, D: 0.160, noise_std: 0.298, white_ratio: 0.002
+
+[Rank 0] (epoch: 1, iters: 130, time: 0.231, data: 0.037) , G_GAN: 0.141, G_NCE: 1.231, Proj_distill: 0.023, Proj_pyramid: 0.255, Proj_sparse: 0.005, D: 0.184, noise_std: 0.297, white_ratio: 0.000
+
+[Rank 0] (epoch: 1, iters: 140, time: 0.235, data: 0.034) , G_GAN: 0.160, G_NCE: 1.267, Proj_distill: 0.024, Proj_pyramid: 0.221, Proj_sparse: 0.005, D: 0.173, noise_std: 0.297, white_ratio: 0.005
+
+[Rank 0] (epoch: 1, iters: 150, time: 0.432, data: 0.036) , G_GAN: 0.212, G_NCE: 1.219, Proj_distill: 0.019, Proj_pyramid: 0.668, Proj_sparse: 0.014, D: 0.185, noise_std: 0.297, white_ratio: 0.013
+
+[Rank 0] (epoch: 1, iters: 160, time: 0.218, data: 0.042) , G_GAN: 0.104, G_NCE: 1.187, Proj_distill: 0.025, Proj_pyramid: 0.238, Proj_sparse: 0.005, D: 0.093, noise_std: 0.297, white_ratio: 0.012
+
+[Rank 0] (epoch: 1, iters: 170, time: 0.228, data: 0.036) , G_GAN: 0.095, G_NCE: 1.179, Proj_distill: 0.011, Proj_pyramid: 0.211, Proj_sparse: 0.004, D: 0.107, noise_std: 0.297, white_ratio: 0.020
+
+[Rank 0] (epoch: 1, iters: 180, time: 0.235, data: 0.035) , G_GAN: 0.098, G_NCE: 1.171, Proj_distill: 0.007, Proj_pyramid: 0.237, Proj_sparse: 0.005, D: 0.085, noise_std: 0.296, white_ratio: 0.040
+
+[Rank 0] (epoch: 1, iters: 190, time: 0.222, data: 0.036) , G_GAN: 0.090, G_NCE: 1.233, Proj_distill: 0.046, Proj_pyramid: 0.475, Proj_sparse: 0.010, D: 0.089, noise_std: 0.296, white_ratio: 0.020
+
+[Rank 0] (epoch: 1, iters: 200, time: 0.423, data: 0.047) , G_GAN: 0.100, G_NCE: 1.135, Proj_distill: 0.020, Proj_pyramid: 0.198, Proj_sparse: 0.004, D: 0.115, noise_std: 0.296, white_ratio: 0.020
+
